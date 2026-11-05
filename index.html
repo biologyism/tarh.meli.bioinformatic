@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بررسی کامل طرح ملی بیوانفورماتیک — گزارش категоریزه‌شده</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Vazirmatn','Segoe UI',Tahoma,Geneva,sans-serif;background:linear-gradient(135deg,#f0f4f8 0%,#e8eef5 100%);color:#1e293b;line-height:1.75;direction:rtl;padding-bottom:4rem}
+a{color:#0f766e;text-decoration:none} a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:2rem 1.5rem}
+/* ---------- Header ---------- */
+header{
+  background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#0f766e 100%);
+  color:#fff;padding:2.5rem 2rem;border-radius:26px;margin-bottom:2rem;
+  box-shadow:0 24px 60px -12px rgba(15,23,42,0.4);position:relative;overflow:hidden
+}
+header::after{
+  content:"";position:absolute;right:-10%;top:-10%;width:400px;height:400px;
+  background:radial-gradient(circle, rgba(15,118,110,0.15), transparent 70%);border-radius:50%}
+header h1{font-size:2rem;font-weight:700;letter-spacing:-0.5px;margin-bottom:0.5rem}
+header p.sub{color:#cbd5e1;font-size:1.02rem;margin-bottom:1rem;max-width:70ch}
+.meta-row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.2rem}
+.meta-row .meta-item{background:rgba(255,255,255,0.1);padding:0.45rem 1rem;border-radius:12px;
+  border:1px solid rgba(255,255,255,0.2);font-size:0.9rem;backdrop-filter:blur(4px)}
+.brand-bar{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:22px;padding:1.5rem 2rem;margin-bottom:2rem;backdrop-filter:blur(10px);box-shadow:0 10px 30px -8px rgba(15,23,42,0.12)}
+.brand-logos{display:flex;gap:2rem;align-items:center;flex-wrap:wrap}
+.brand-logo{display:flex;flex-direction:column;align-items:center;gap:0.45rem}
+.brand-logo img{width:120px;height:auto;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(0,0,0,0.35));}
+.brand-caption{font-weight:700;font-size:0.88rem;color:#f8fafc;text-align:center;text-shadow:0 2px 8px rgba(0,0,0,0.7);letter-spacing:0.2px;line-height:1.3}
+.brand-title{flex:1;text-align:center}
+.brand-title h1{color:#fff;margin:0 0 0.4rem;font-size:1.5rem;line-height:1.3}
+.brand-sub{color:rgba(255,255,255,0.88);font-size:0.9rem;margin:0}
+/* ---------- Stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.5rem 0 2.5rem}
+.stat-card{background:#fff;padding:1.3rem 1rem;border-radius:18px;box-shadow:0 10px 25px -5px rgba(15,23,42,0.06);
+  border:1px solid #e2e8f0;text-align:center}
+.stat-card .num{font-size:1.8rem;font-weight:700;color:#0f766e}
+.stat-card .lbl{font-size:0.85rem;color:#64748b;margin-top:0.25rem}
+/* ---------- TOC ---------- */
+.toc{background:#fff;border-radius:20px;padding:1.6rem 1.5rem;box-shadow:0 10px 25px -5px rgba(15,23,42,0.06);
+  border:1px solid #e2e8f0;margin-bottom:2.5rem}
+.toc h2{font-size:1.25rem;margin-bottom:1rem;color:#0f172a;display:flex;align-items:center;gap:0.5rem}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.toc-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:1.1rem 1.25rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:0.55rem;transition:all 0.25s;box-shadow:0 6px 16px -4px rgba(15,23,42,0.05)}
+.toc-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px -6px rgba(15,23,42,0.1);border-color:var(--accent);background:#f0fdfa}
+.toc-icon{font-size:1.5rem}
+.toc-title{font-weight:600;color:#0f172a;font-size:0.92rem;line-height:1.4}
+.toc-instr{font-size:0.8rem;color:#0f766e;font-weight:500}
+.toc-duration{font-size:0.78rem;color:#64748b;margin-top:auto}
+/* ---------- Modules ---------- */
+.module-card{background:#fff;border-radius:22px;overflow:hidden;margin-bottom:1.8rem;box-shadow:0 14px 35px -8px rgba(15,23,42,0.08);
+  border:1px solid #e2e8f0;transition:transform .25s,box-shadow .25s}
+.module-card:hover{transform:translateY(-4px);box-shadow:0 24px 45px -10px rgba(15,23,42,0.12)}
+.module-head{display:flex;gap:1rem;padding:1.3rem 1.5rem;align-items:center}
+.module-badge{width:48px;height:48px;border-radius:14px;background:var(--accent);color:#fff;display:flex;align-items:center;
+  justify-content:center;font-size:1.6rem;flex-shrink:0;box-shadow:0 8px 20px -6px var(--accent)}
+.module-meta{flex:1}
+.module-title{font-size:1.25rem;font-weight:700;color:#0f172a;margin-bottom:0.2rem}
+.module-sub{font-size:0.92rem;color:#64748b;margin-bottom:0.5rem}
+.module-line{display:flex;flex-wrap:wrap;gap:0.5rem}
+.chip{display:inline-flex;align-items:center;background:#f1f5f9;color:#334155;border:1px solid #e2e8f0;
+  border-radius:10px;padding:0.2rem 0.65rem;font-size:0.82rem}
+.chip.duration{background:#e0f2f1;color:#0f766e;border-color:#b2dfdb;font-weight:600}
+.module-body{padding:0 1.5rem 1.4rem}
+.session{padding:0.75rem 0;border-bottom:1px solid #f1f5f9;position:relative}
+.session:last-child{border-bottom:none}
+.session-head{display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.35rem}
+.session-title{font-weight:600;color:#0f172a;font-size:0.98rem}
+.session-duration{font-size:0.78rem;color:#94a3b8;background:#f8fafc;padding:0.1rem 0.5rem;border-radius:8px;border:1px solid #e2e8f0}
+ul.topics{list-style:none;margin:0.3rem 0}
+ul.topics li{position:relative;padding-inline-start:1.5rem;margin-bottom:0.3rem;color:#334155;font-size:0.9rem}
+ul.topics li::before{content:"✦";position:absolute;left:0;color:var(--accent);font-weight:bold;font-size:0.75rem}
+.mod-note{margin-top:0.7rem;padding:0.7rem 0.9rem;background:#fbfbfb;border:1px dashed #cbd5e1;border-radius:10px;
+  font-size:0.82rem;color:#64748b}
+/* ---------- Notes ---------- */
+.notes{background:#fffef6;border:1px solid #f59e0b22;border-radius:18px;padding:1.5rem;margin-top:2.5rem;box-shadow:0 10px 25px -5px rgba(15,23,42,0.05)}
+.notes h2{color:#92400e;margin-bottom:0.8rem;display:flex;align-items:center;gap:0.5rem}
+.notes ul{list-style:none;margin-inline-end:1rem}
+.notes li{margin-bottom:0.55rem;padding-inline-start:1.6rem;position:relative;color:#454131;font-size:0.92rem}
+.notes li::before{content:"⚠";position:absolute;left:0;color:#d97706;font-weight:bold}
+/* ---------- Footer ---------- */
+footer{margin-top:3rem;padding:2rem 0;border-top:1px solid #e2e8f0;color:#64748b;font-size:0.85rem;text-align:center}
+@media print{
+  body{background:#fff;padding:0} .container{max-width:100%}
+  header{background:#0f172a !important;-webkit-print-color-adjust:exact}
+  .module-card{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>بررسی کامل «طرح ملی بیوانفورماتیک»</h1>
+</header>
+
+<div class="toc">
+  <h2>🗂 فهرست سرفصل‌ها و دسته‌بندی‌ها</h2>
+  <div class="toc-grid">
+    <a href="#m1" class="toc-card"><div class="toc-icon">🎓</div><div class="toc-title">مقدمات</div><div class="toc-instr">استاد: دکتر صالحی / دکتر کاووسی</div><div class="toc-duration">۱ جلسه · ۲ ساعت</div></a><a href="#m2" class="toc-card"><div class="toc-icon">💡</div><div class="toc-title">ایده پردازی و گرنت</div><div class="toc-instr">استاد: دکتر علیاری</div><div class="toc-duration">۲ جلسه · ۴ ساعت</div></a><a href="#m3" class="toc-card"><div class="toc-icon">🐍</div><div class="toc-title">پردازش و تحلیل اولیه توالی‌های زیستی با پایتون (Biopython)</div><div class="toc-instr">استاد: خانم دکتر وفایی</div><div class="toc-duration">۲ جلسه · ۴ ساعت</div></a><a href="#m4" class="toc-card"><div class="toc-icon">🐧</div><div class="toc-title">لینوکس و اوبونتو</div><div class="toc-instr">استاد: دکتر نوروزی</div><div class="toc-duration">۲ جلسه · ۴ ساعت</div></a><a href="#m5" class="toc-card"><div class="toc-icon">📊</div><div class="toc-title">مبانی R و RStudio و کار با داده‌ها</div><div class="toc-instr">استاد: خانم غلا</div><div class="toc-duration">۴ جلسه + پروژه عملی نهایی · ۱۰ ساعت</div></a><a href="#m6" class="toc-card"><div class="toc-icon">🧫</div><div class="toc-title">پایگاه‌های داده سرطانی و میکس‌אومیکس (TCGA · GDC · cBioPortal · GTEx · GEO)</div><div class="toc-instr">استاد: خانم دکتر میرصادقی</div><div class="toc-duration">۴ جلسه + ۲ پروژه · ۱۲ ساعت</div></a><a href="#m7" class="toc-card"><div class="toc-icon">🧬</div><div class="toc-title">ژنومیکس</div><div class="toc-instr">استاد: دکتر مرعشی</div><div class="toc-duration">۲ جلسه · ۴ ساعت</div></a><a href="#m8" class="toc-card"><div class="toc-icon">🧬</div><div class="toc-title">تحلیل داده‌های توالی‌یابی نسل جدید (NGS) و اگزوم</div><div class="toc-instr">استاد: خانم دکتر اقبالی</div><div class="toc-duration">۴ جلسه · ۸ ساعت</div></a><a href="#m9" class="toc-card"><div class="toc-icon">🦠</div><div class="toc-title">تحلیل داده‌های متاژنوم با استفاده از Shotgun و Galaxy</div><div class="toc-instr">استاد: دکتر نوروزی</div><div class="toc-duration">۴ جلسه + پروژه پایانی ۵-session · ۱۸ ساعت</div></a><a href="#m10" class="toc-card"><div class="toc-icon">🧪</div><div class="toc-title">میکروآرایه و RNA-Seq</div><div class="toc-instr">استاد: جناب آقای ذ... ★ (نام در منبع ناخوانسته است)</div><div class="toc-duration">۵ جلسه + پروژه · حدود ۱۰ ساعت</div></a><a href="#m11" class="toc-card"><div class="toc-icon">🧪</div><div class="toc-title">Bulk RNA-Seq Foundation</div><div class="toc-instr">استاد: خانم دکتر ★ (نام در منبع ناخوانسته است)</div><div class="toc-duration">۲ جلسه · ۴ ساعت</div></a><a href="#m12" class="toc-card"><div class="toc-icon">🧮</div><div class="toc-title"> Finding the Most Important Genes with DEG Analysis</div><div class="toc-instr">استاد: ★ (نام استاد در منبع ناخوانسته است)</div><div class="toc-duration">۳ جلسه · ۶ ساعت</div></a><a href="#m13" class="toc-card"><div class="toc-icon">🗺️</div><div class="toc-title"> From Gene List to Pathway</div><div class="toc-instr">استاد: دکتر مرعشی (استنتاج از 조선 منبع)</div><div class="toc-duration">۴ جلسه + mini-project + جلسه پنجم پروژه العمق · ۱۰ ساعت</div></a><a href="#m14" class="toc-card"><div class="toc-icon">🧫</div><div class="toc-title">Single-Cell RNA-Seq</div><div class="toc-instr">استاد: خانم دکتر ★ (نام در منبع ناخوانسته است)</div><div class="toc-duration">۳ جلسه + پروژه موضوع · ۶ ساعت</div></a><a href="#m15" class="toc-card"><div class="toc-icon">🗺️</div><div class="toc-title">Spatial Transcriptomics</div><div class="toc-instr">استاد: خانم دکتر غلا ★ (نام در منبع частично ناخوانسته است)</div><div class="toc-duration">۴ جلسه + پروژه العمق · ۸ ساعت</div></a><a href="#m16" class="toc-card"><div class="toc-icon">🧬</div><div class="toc-title">تنظيم ژن و Epi-genomika (ChIP-seq · ATAC-seq · DNA Methylome)</div><div class="toc-instr">استاد: خانم دکتر مهرمحمدی</div><div class="toc-duration">۵ جلسه + پروژه العمق · ۱۰ ساعت</div></a><a href="#m17" class="toc-card"><div class="toc-icon">🧬</div><div class="toc-title">پروتئومیکس</div><div class="toc-instr">استاد: دکتر قنبری</div><div class="toc-duration">۳ جلسه · ۶ ساعت</div></a><a href="#m18" class="toc-card"><div class="toc-icon">🧪</div><div class="toc-title">متابولومیکس</div><div class="toc-instr">استاد: دکتر مرعشی (بخشفهوم) و مهندس کاووسی (جلسات ۱ تا ۷)</div><div class="toc-duration">۷ جلسه + پروژه عملی · ۱۴ ساعت</div></a><a href="#m19" class="toc-card"><div class="toc-icon">🧠</div><div class="toc-title">یادگیری ماشین</div><div class="toc-instr">استاد: دکتر نوروزی</div><div class="toc-duration">۶ جلسه + پروژه نهایی · ۱۲ ساعت</div></a><a href="#m20" class="toc-card"><div class="toc-icon">🧬</div><div class="toc-title">Multi-Omics (میکس-أومیکس)</div><div class="toc-instr">استاد: خانم فاطمه وفایی</div><div class="toc-duration">۲ جلسه + پروژه · ۴ ساعت</div></a><a href="#m21" class="toc-card"><div class="toc-icon">💉</div><div class="toc-title">طراحی واکسن</div><div class="toc-instr">استاد: دکتر سيف پور</div><div class="toc-duration">۴ روز/جلسه · حدود ۸ ساعت</div></a><a href="#m22" class="toc-card"><div class="toc-icon">📝</div><div class="toc-title">نگارش مقاله</div><div class="toc-instr">استاد: خانم فرشته نوروزی</div><div class="toc-duration">۲ جلسه · ۴ ساعت</div></a><a href="#m23" class="toc-card"><div class="toc-icon">💼</div><div class="toc-title">فریلنسری و بازار کار</div><div class="toc-instr">استاد: —</div><div class="toc-duration">۲ جلسه · ۴ ساعت</div></a>
+  </div>
+</div>
+
+<section class="detail">
+  
+    <section class="module-card" id="m1" style="--accent:#1e3a5f;">
+      <div class="module-head">
+        <div class="module-badge">🎓</div>
+        <div class="module-meta">
+          <div class="module-title">مقدمات</div>
+          <div class="module-sub">شناسایی با دوره، اهداف و ملزومات</div>
+          <div class="module-line">
+            <span class="chip">استاد: دکتر صالحی / دکتر کاووسی</span>
+            <span class="chip duration">۱ جلسه · ۲ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">آشنایی با دوره، اهداف و ملزومات آن</span>
+        <span class="session-duration"></span>
+      </div>
+      
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m2" style="--accent:#0f766e;">
+      <div class="module-head">
+        <div class="module-badge">💡</div>
+        <div class="module-meta">
+          <div class="module-title">ایده پردازی و گرنت</div>
+          <div class="module-sub">از ایده‌پردازش تا نوشتن پروپوزال و جذب مالیات</div>
+          <div class="module-line">
+            <span class="chip">استاد: دکتر علیاری</span>
+            <span class="chip duration">۲ جلسه · ۴ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — ایده برداری و شناسایی فرصت‌ها</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>شناسایی مسائل و نیازهای پژوهشی و صنعتی</li><li>تبدیل داده‌های زیستی به ایده‌های نوآورانه</li><li>ارزیابی ایده از نظر نوآوری و امکان اجرا</li><li>نمونه‌های موفق کاربردی بیوانفورماتیک</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — جذب گرنت و پروپوزال نویسی</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>شناسایی فراخوان‌ها و منابع تأمین مالی</li><li>تدوین ایده، اهداف و روش اجرا</li><li>نگارش بخش نوآوری، بودجه و زمان‌بندی</li><li>خطاهای رایج در گرنت نویسی</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m3" style="--accent:#0ea5e9;">
+      <div class="module-head">
+        <div class="module-badge">🐍</div>
+        <div class="module-meta">
+          <div class="module-title">پردازش و تحلیل اولیه توالی‌های زیستی با پایتون (Biopython)</div>
+          <div class="module-sub">کتابخانه Biopython، توالی‌های FASTA/FASTQ و تحلیل-тоulai</div>
+          <div class="module-line">
+            <span class="chip">استاد: خانم دکتر وفایی</span>
+            <span class="chip duration">۲ جلسه · ۴ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — معرفی کتابخانه Biopython و بازشناسی توالی زیستی</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>آشنایی با کتابخانه Biopython برای خواندن و پردازش فایل‌های توالی زیستی (FASTQ و FASTA) — ماژول SeqIO</li><li>کار با شیء Seq در Biopython و بررسی مفاهیم دگم مرکزی زیست‌شناسی</li><li>روندنسی و ترجمه توالی‌های زیستی</li><li>محاسبه محتوای GC در توالی‌های نوکلیوتیدی</li><li>خواندن و تجزیه فایل‌های FASTQ و ارزیابی کیفیت خوانش‌های توالی‌یابی (Quality Assessment)</li><li>انتخاب و فیلترسازی توالی‌ها بر اساس معیارهای اساس</li><li>پردازش فایل‌های حجیم با ماژول Indexing</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — پایگاه داده، هم‌ترازی و مصورسازی توالی</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>دسترسی به پایگاه‌های داده زیستی NCBI با ماژول Entrez در Biopython و بازیابی اطلاعات توالی‌ها</li><li>هم‌ترازی دوتایی توالی‌ها با استفاده از Pairwise Sequence Alignment — ماژول Pairwise2</li><li>هم‌ترازی توالی‌ها با استفاده از ابزار BLAST و بررسی نتایج</li><li>جستجو و شناسایی موتیف (Motif) در توالی‌ها با Biopython</li><li>ترسیم و مصورسازی اطلاعات و ویژگی‌های توالی‌های زیستی (Visualization)</li><li>رسم درخت فیلوژنتیک (تبرازایی)</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m4" style="--accent:#f59e0b;">
+      <div class="module-head">
+        <div class="module-badge">🐧</div>
+        <div class="module-meta">
+          <div class="module-title">لینوکس و اوبونتو</div>
+          <div class="module-sub">محیط کاربری، ترمینال و نصب نرم‌افزار</div>
+          <div class="module-line">
+            <span class="chip">استاد: دکتر نوروزی</span>
+            <span class="chip duration">۲ جلسه · ۴ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — آشنايی با لینوکس و راه‌اندازی محیط اوبونتو</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>معرفی لینوکس و سیستم عامل</li><li>مزایا و کاربردهای اوبونتو برای بیوانفورماتیک</li><li>نصب و راه‌اندازی اوبونتو</li><li>محیط کاربری اوبونتو و دسکتاپ</li><li>نصب برنامه‌ها و نرم‌افزارهای متداول</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — کار با ترمینال، مدیریت فایل‌ها و نصب نرم‌افزارها</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>آشنایی با ترمینال و محیط خط فرمان</li><li>معرفی و اجرای دستورات پایه و پرکاربرد لینوکس</li><li>مدیریت فایل‌ها و دایرکتورها از طریق خط فرمان</li><li>انجام تمرین‌های عملی برای تثبیت دستورات و مهارت‌های آموخته شده</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m5" style="--accent:#db2777;">
+      <div class="module-head">
+        <div class="module-badge">📊</div>
+        <div class="module-meta">
+          <div class="module-title">مبانی R و RStudio و کار با داده‌ها</div>
+          <div class="module-sub">برنامه‌نویسی R، آمار و مصورسازی داده‌های زیستی</div>
+          <div class="module-line">
+            <span class="chip">استاد: خانم غلا</span>
+            <span class="chip duration">۴ جلسه + پروژه عملی نهایی · ۱۰ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — آشنایی با R و RStudio و مبانی کار با داده‌ها</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>RStudio و R مبانی (اسکریپت‌ها، Help و Assignment)</li><li>نصب و بارگذاری بسته‌ها (Package)</li><li>انواع داده و ساختارهای داده (Vector، List، Matrix، Data Frame)</li><li>Indexing و Subsetting</li><li>مدیریت داده‌های گمشده (Missing Values)</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — R: ورود، مدیریت و پردازش داده‌ها</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>ورود و مدیریت داده‌ها (CSV، Export، Filtering)</li><li>بررسی و اصلاح ساختار داده‌ها</li><li>برنامه‌نویسی در R: دستورات شرطی (Conditional Statements)</li><li>حلقه‌های For</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه سوم — R: تحلیل آماری و مصورسازی داده‌ها</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>آمار پایه (میانگین، واریانس و توزیع نرمال)</li><li>آزمون‌های آماری (ANOVA و T-test)</li><li>مصورسازی داده‌ها (Boxplot و Histogram)</li><li>رسم نمودار با ggplot2</li><li>تنظیم و شخصی‌سازی نمودارها</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه چهارم — تحلیل داده‌های زیستی و پروژه عملی</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>ماتریس‌های Gene Expression، نام‌گذاری Gene و Sample</li><li>Data Reshaping</li><li>نمودارهای مقایسه و Heatmap</li><li>پروژه عملی نهایی</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m6" style="--accent:#7c3aed;">
+      <div class="module-head">
+        <div class="module-badge">🧫</div>
+        <div class="module-meta">
+          <div class="module-title">پایگاه‌های داده سرطانی و میکس‌אومیکس (TCGA · GDC · cBioPortal · GTEx · GEO)</div>
+          <div class="module-sub">کاووروت سرطانی، پورتال GDC و تحلیل داده‌های مولکولی و بالینی</div>
+          <div class="module-line">
+            <span class="chip">استاد: خانم دکتر میرصادقی</span>
+            <span class="chip duration">۴ جلسه + ۲ پروژه · ۱۲ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — TCGA و GDC Data Portal</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>آشنایی با برنامه GDC و جستجو در داده‌های TCGA</li><li>طراحی کوهورت پژوهشی</li><li>میکس-α سرطانی</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — دریافت داده‌ها از GDC Repository</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>دریافت داده‌های میکس-α از GDC Repository و کاوش در داده‌های مولکولی و GDC بالینی</li><li>ابزارهای تحلیلی GDC</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه سوم — تحلیل داده‌های سرطان cBioPortal</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>کاوش، تحلیل و مصورسازی داده‌های مولکولی و بالینی سرطان با ابزارهای تعامل</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه چهارم — GTEx و GEO</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>پروژه: مقایسه جهش‌های IDH1، TP53، ATRX، CIC، FUBP1، TERT در gliomas (LGG/GBM) با cBioPortal</li><li>پروژه: بررسی هم‌روcy ژن‌ها با cBioPortal</li><li>پروژه: شناسایی ژن‌های متفاوت در آلزایمر با GEO2R</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m7" style="--accent:#be185d;">
+      <div class="module-head">
+        <div class="module-badge">🧬</div>
+        <div class="module-meta">
+          <div class="module-title">ژنومیکس</div>
+          <div class="module-sub">ساختار ژنوم، واریانت‌ها، تشخیص مولکولی و پزشکی دقیق</div>
+          <div class="module-line">
+            <span class="chip">استاد: دکتر مرعشی</span>
+            <span class="chip duration">۲ جلسه · ۴ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — مبانی ژنومیکس</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>ساختار و سازمان ژنوم انسان</li><li>جین‌ها و نواحی کدکننده و غیرکدکننده</li><li>انواع تغییرات ژنتی و واریانت‌ها</li><li>مفاهیم ژنوتایپ، فنوتایپ و تنوع ژنتی</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — کاربردهای ژنومیکس</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>سرطان و بیماری‌های ارثی در ژنومیکس</li><li>ژنومیکس در تشخیص مولکولی و پزشکی دقیق</li><li>پایگاه‌های داده ژنومی و واریانت-بیماری</li><li>تحلیل داده‌های توالی‌یابی اکزوم</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m8" style="--accent:#0891b2;">
+      <div class="module-head">
+        <div class="module-badge">🧬</div>
+        <div class="module-meta">
+          <div class="module-title">تحلیل داده‌های توالی‌یابی نسل جدید (NGS) و اگزوم</div>
+          <div class="module-sub">کنترل کیفیت، حاشیه‌نویسی و تفسیر بالینی واریانت با CLC Genomics Workbench</div>
+          <div class="module-line">
+            <span class="chip">استاد: خانم دکتر اقبالی</span>
+            <span class="chip duration">۴ جلسه · ۸ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — مبانی تکنولوژی توالی‌یابی نسل جدید</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>مروری بر تکنولوژی توالی‌یابی نسل جدید و پلتفرم‌های مختلف آن</li><li>آشنایی با فرمت فایل‌ها (FASTQ، SAM، BAM، VCF)</li><li>کنترل کیفیت فایل FASTQ (Phred Quality Score)</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — حاشیه‌نویسی و تفسیر بالینی واریانت‌ها</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>حاشیه‌نویسی و فیلترینگ واریانت‌ها</li><li>تهیه پنل ژنی (Invitae، Blueprint Genetics، HPO)</li><li>مشاهده فایل BAM با نرم‌افزار IGV</li><li>تفسیر واریانت‌ها بر اساس گایدرلاین ACMG</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه سوم و چهارم — تحلیل عملی با CLC Genomics Workbench</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>تولید فایل FASTQ از داده و سپس فیلترینگ و تفسیر بالینی واریانت‌ها (Annotated VCF)</li><li>بخش عملی: تحلیل با CLC Genomics Workbench از VCF تا FASTQ</li><li>پروژه بالینی: تحلیل و تفسیر واریانت GSD کیس</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m9" style="--accent:#65a30d;">
+      <div class="module-head">
+        <div class="module-badge">🦠</div>
+        <div class="module-meta">
+          <div class="module-title">تحلیل داده‌های متاژنوم با استفاده از Shotgun و Galaxy</div>
+          <div class="module-sub">پایپ‌لاین متاژنومیکس، Takسونومیک و تحلیل مبتنی بر Mapping</div>
+          <div class="module-line">
+            <span class="chip">استاد: دکتر نوروزی</span>
+            <span class="chip duration">۴ جلسه + پروژه پایانی ۵-session · ۱۸ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — مبانی متاژنومیکس و پلتفرم Galaxy</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>معرفی و جایگاه متاژنومیکس در Omics</li><li>تفاوت Shotgun Metagenomics و 16S rRNA</li><li>پایپ‌لاین استاندارد تحلیل متاژنوم</li><li>معرفی پایگاه‌های داده KEGG و NCBI</li><li>ساخت اکانت و مدیریت History در Galaxy</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — پیش‌پردازش و کنترل کیفیت داده‌های متاژنوم</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>FastQC</li><li>Trimmomatic (حذف توالین/کدار)</li><li>Bowtie2 (حذف میزبان trimming)</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه سوم — آنالیز تاکسونومیک</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>MetaPhlAn، استخراج جدول فراوانی</li><li>رسم نمودار فراوانی، مقایسه نمونه‌ها</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه چهارم — آنالیز مبتنی بر Mapping</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>Bowtie2، پردازش فایل BAM، SAMtools، BLAST</li><li>استخراج ژن‌های prevalent، count matrix</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">پروژه پایانی (۵ جلسه) — اسمبلی، پیش‌گویی ژن و تحلیل عملکردی</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>MEGAHIT (اسمبلی)، MetaGeneMark (پیش‌گویی ژن)، CD-HIT (حذف تکراری)</li><li>استخراج KO از KEGG و تفسیر pathway‌ها</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m10" style="--accent:#b45309;">
+      <div class="module-head">
+        <div class="module-badge">🧪</div>
+        <div class="module-meta">
+          <div class="module-title">میکروآرایه و RNA-Seq</div>
+          <div class="module-sub">کلیدواژه‌های microarray، رنا-اسکیو، GEO، GEO2R و برنامه‌نویسی در R</div>
+          <div class="module-line">
+            <span class="chip">استاد: جناب آقای ذ... ★ (نام در منبع ناخوانسته است)</span>
+            <span class="chip duration">۵ جلسه + پروژه · حدود ۱۰ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — آشنایی با داده‌ها و دستگاه مرکزی شناسایی جن</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>بخش اول — آشنایی با ... و داده‌ها</li><li>دستگاه مرکزی شناسایی جن و مفاهیم پایه</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — آماده‌سازی و تحلیل داده‌ها</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>فیلتر کردن داده‌ها، طراحی آزمون، تکرارهای آزمون</li><li>صورت‌های انجام آزمون‌ها، مزایا و معایب فناوری RNA-Seq</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه سوم — تحلیل داده‌های ژنومیکس</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>آشنایی با پایگاه داده GEO، تحلیل داده‌های GEO با GEO2R و تفسیر نتایج</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه چهارم — برنامه‌نویسی در R و RStudio</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>توسعه محیط R، برنامه‌نویسی، اسکریپت اول/دوم/سوم، پرسش و پاسخ</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه پنجم — پروژه</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>تحلیل دیتاست‌های میکروآرایه با GEO2R</li><li>تحلیل دیتاست B cell tumorigenesis در محیط R Studio و کدنویسی</li></ul>
+      
+    </div>
+        <div class="mod-note">متن این سرفصل در PDF منبع با فونت غیر unicode ذخیره شده است و برخی الفاظ در استخراج ناخوانسته مانده‌اند؛ بازسازی شده بر اساس متن قابل‌خواندن منبع.</div>
+      </div>
+    </section>
+    <section class="module-card" id="m11" style="--accent:#0f172a;">
+      <div class="module-head">
+        <div class="module-badge">🧪</div>
+        <div class="module-meta">
+          <div class="module-title">Bulk RNA-Seq Foundation</div>
+          <div class="module-sub">طراحی آزمایش، کنترل کیفیت، هم‌ترازی ومعادله-expression</div>
+          <div class="module-line">
+            <span class="chip">استاد: خانم دکتر ★ (نام در منبع ناخوانسته است)</span>
+            <span class="chip duration">۲ جلسه · ۴ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — Foundation (۱ جلسه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>مرور transcriptome و Central dogma؛ سوال‌های RNA-seq</li><li>اصول طراحی آزمایش (Experimental design): تعداد replicate، اثر batch، عمق توالی</li><li>انتخاب‌های کتابخانه: polyA، stranded، rRNA depletion، unstranded، single-end، paired-end</li><li>اصول توالی Illumina؛ فرمت FASTQ و Phred quality score</li><li>کنترل کیفیت: FastQC و MultiQC؛ Trimming: Trimmomatic و fastp</li><li>آماده‌سازی محیط (Linux، conda)، است-reference (FASTA، GTF از Ensembl GENCODE)</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — From Aligned Reads to Expression Values (۲ ساعت)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>مفهوم alignment و aligners bite-splice-aware (STAR، HISAT2)، ساخت genome index و اجرای alignment</li><li>فرمت SAM/BAB و samtools</li><li>QC از alignment: mapping rate، Qualimap، RSeQC</li><li>Quantification: HTSeq-count و featureCounts</li><li>روش‌های pseudo-alignment: Salmon، kallisto، tximport، ساخت count matrix</li><li>واحدها: CPM، RPKM/FPKM، TPM و raw count؛ DEG و چرا استفاده می‌شود</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m12" style="--accent:#4f46e5;">
+      <div class="module-head">
+        <div class="module-badge">🧮</div>
+        <div class="module-meta">
+          <div class="module-title"> Finding the Most Important Genes with DEG Analysis</div>
+          <div class="module-sub">تحلیل تفاضلی الجينات با DESeq2، edgeR، limma-voom</div>
+          <div class="module-line">
+            <span class="chip">استاد: ★ (نام استاد در منبع ناخوانسته است)</span>
+            <span class="chip duration">۳ جلسه · ۶ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">۳ جلسه — منطق آماری و تحلیل انحصاری</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>منطق آماری: توزیع Negative Binomial، dispersion، size factor</li><li>Exploratory analysis: PCA، VST/rlog، heatmap، فاصله بین نمونه‌ها، شناسایی outlier</li><li>طراحی design matrix و contrast (افزودن batch به عنوان covariate)</li><li>اجرا DESeq2 و edgeR و limma-voom</li><li>آزمون‌های آماری: Wald و LRT، تصحیح چندتگانه Multiple testing correction (FDR، روش Benjamini-Hochberg)</li><li>LFC shrinkage و انتخاب threshold</li><li>مصورسازی: Volcano plot، heatmap، MA plot</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m13" style="--accent:#0d9488;">
+      <div class="module-head">
+        <div class="module-badge">🗺️</div>
+        <div class="module-meta">
+          <div class="module-title"> From Gene List to Pathway</div>
+          <div class="module-sub">تغذیه کارکردی، ORA، GSEA،STRING و miniproject</div>
+          <div class="module-line">
+            <span class="chip">استاد: دکتر مرعشی (استنتاج از 조선 منبع)</span>
+            <span class="chip duration">۴ جلسه + mini-project + جلسه پنجم پروژه العمق · ۱۰ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">۴ جلسه — از لیست جین به مسیر/pathway</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>چرا Functional enrichment؟ آشنایی با MSigDB، GO، KEGG، Reactome</li><li>Over-Representation Analysis (ORA) و انتخاب background gene set</li><li>Gene Set Enrichment Analysis (GSEA) و ranked list (fgsea، clusterProfiler)</li><li>ابزارهای وب: g:Profiler، Enrichr</li><li>مصورسازی: dotplot، cnetplot، enrichment map</li><li>آشنایی با STRING و شبکه‌های پروتئینی، نتایج pathway تکراری و تفسیر</li><li>Mini-project: اجرای pipeline از FASTQ تا pathway و نوشتن گزارش نهایی</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه پنجم — پروژه العمق</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>تحلیل تفاضلی الجينات و شناسایی ژن‌های متمايز در adenocarcinoma ریوی (Lung) با سه級ه مقاومت به chemotherapy</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m14" style="--accent:#c026d3;">
+      <div class="module-head">
+        <div class="module-badge">🧫</div>
+        <div class="module-meta">
+          <div class="module-title">Single-Cell RNA-Seq</div>
+          <div class="module-sub">از تکستو تا داده، تجزیه داده‌های دوبعدی و ورک‌فلو کامل تکسلولی</div>
+          <div class="module-line">
+            <span class="chip">استاد: خانم دکتر ★ (نام در منبع ناخوانسته است)</span>
+            <span class="chip duration">۳ جلسه + پروژه موضوع · ۶ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — From Tissue to Data (۱ جلسه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>چرا Single-cell؟ heterogeneity و مشکل Bulk RNA-seq</li><li>آماده‌سازی نمونه: tissue dissociation، cell suspension و QC اولیه (viability، تعداد سلول)</li><li>پلتفرم‌ها: 10x Genomics، plate-based، droplet-based، split-pool، Smart-seq2</li><li>آشنایی با خروجی‌ها (matrix.mtx، barcodes، features، web_summary)</li><li>چالش‌ها: ambient RNA، dropout، doublets</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — Making Sense of High-Dimensional Data (۲ جلسه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>QC metrics: nFeature، nCount، درصد ژن‌های میتوکندری؛ فیلتر کردن سلول‌ها و ژن‌ها</li><li>شناسایی و حذف doublet (Scrublet، scDblFinder) و ambient RNA (SoupX)</li><li>نرمال‌سازی: SCTransform و Log-normalization، انتخاب Highly Variable Genes</li><li>PCA و Scaling، انتخاب تعداد PC، Elbow plot</li><li>ساخت kNN graph و clustering (Leiden، Louvain)، پارامتر resolution</li><li>مصورسازی: UMAP و t-SNE و خطاهای رایج در تفسیر آن‌ها</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه سوم — Whole Single-Cell RNA-seq Workflow (۳ جلسه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>Integration و Batch correction (Seurat CCA/RPCA، Harmony، scVI)، پ علامت مارکر جین برای هر cluster</li><li>Cell type annotation: دو روش خودکار و ارزیابی (SingleR، CellTypist)</li><li>Differential expression و روش‌های pseudobulk</li><li>تحلیل‌های سطح Cell-cell و Trajectory/Pseudotime (Monocle، scVelo)، ارتباطات سلولی (CellChat)</li><li>Hands-on: اجرای pipeline روی دیتاست نمونه</li></ul>
+      
+    </div>
+        <div class="mod-note">پروژه موضوع: pathology در سطح تکسلولی و توموری (بخش‌های مرتبط در منبع با فونت غیر unicode ناخوانسته مانده‌اند).</div>
+      </div>
+    </section>
+    <section class="module-card" id="m15" style="--accent:#0284c7;">
+      <div class="module-head">
+        <div class="module-badge">🗺️</div>
+        <div class="module-meta">
+          <div class="module-title">Spatial Transcriptomics</div>
+          <div class="module-sub">تکنولوژی‌های مکانی، تحلیل داده‌های مکانی و پروژه العمق</div>
+          <div class="module-line">
+            <span class="chip">استاد: خانم دکتر غلا ★ (نام در منبع частично ناخوانسته است)</span>
+            <span class="chip duration">۴ جلسه + پروژه العمق · ۸ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — معرفی Spatial Transcriptomics (۱ جلسه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>معرفی Spatial Transcriptomics و تکنولوژی‌های آن، اهمیت اطلاعات مکانی از جین‌ها</li><li>تفاوت Spatial Transcriptomics و Bulk RNA-seq، Single-cell RNA-seq</li><li>مفهوم Spot و رزولوشن، تکنولوژی‌های دیجیتال مبتنی بر Visium و روش‌های برآورد</li><li>محدودیت‌ها، رزولوشن و توان عمل</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — داده‌های مرجع و ساختار فایل‌ها (۲ جلسه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>داده‌های مرجع و داده‌های 땠، ساختار فایل‌ها (Coordinates، Spatial Matrix، Image)</li><li>نحوه سازماندهی داده‌ها برای تحلیل</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه سوم — تحلیل داده‌های مکانی (۱ جلسه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>مراحل استاندارد تحلیل داده‌های مکانی: بارگذاری داده، کنترل کیفیت، نرمال‌سازی، خوشه‌بندی، نمایش، شناسایی جین‌های متغیّر</li><li>ابزارها و ستاره‌ها: Squidpy و Scanpy، ار'éche‌سازی داده‌های Spatial و Single-cell</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه چهارم — پروژه العمق (۴ ساعت)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>پردازش داده‌های مکانی، بارگذاری داده‌های genomics، ساختار متادیتا، توزیع و تازفت تصاویر Spot</li><li>پاکسازی و نرمال‌سازی، حذف Spot‌های کم، خوشه‌بندی، نشان کردن خوشه‌ها روی نقشه</li><li>شناسایی جین‌های متغیّر، تحلیل همسایگی سلول‌ها</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m16" style="--accent:#7c2d12;">
+      <div class="module-head">
+        <div class="module-badge">🧬</div>
+        <div class="module-meta">
+          <div class="module-title">تنظيم ژن و Epi-genomika (ChIP-seq · ATAC-seq · DNA Methylome)</div>
+          <div class="module-sub"> peak calling، แอดנوتیشن و تحلیل تنظيم ژن</div>
+          <div class="module-line">
+            <span class="chip">استاد: خانم دکتر مهرمحمدی</span>
+            <span class="chip duration">۵ جلسه + پروژه العمق · ۱۰ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">روش‌های تحلیل داده‌های آنالیز (معمولی)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>روش‌های تحلیل داده‌های آنالیز (ChIP-seq)، روش (ATAC-seq)، روش‌های بررسی methylome (DNA Methylome Profiling) و قالب‌ها</li><li>هم‌ترازسازی داده‌های توالی برش‌سولفيت (Bisulfite-Converted Data): Bismark، BisMAP (Alignment)</li><li>شناسایی و معیارهای متaside در سطح kromatin: Calling and Read-Level Methylation Quantification Metrics، Methylation Haplotypes</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — مقدمه‌ای بر تنظيم ژن و فناوری‌ها (۱ جلسه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>رونوشتورهای ژن، Faham...؛ ChIP-seq: شناسایی جای اتصال فاکتورهای رونویسی؛ ATAC-seq: شناسایی نوکlezdor کروماتین</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — منابع داده و آماده‌سازی داده‌های خام (۱ جلسه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>GEO، SRA، فرمت FASTQ، کنترل کیفیت (QC)، هم‌ترازسازی reads</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه سوم — تحلیل داده‌های ChIP-seq و ATAC-seq (۱ جلسه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>Peak Calling (شنهاسای قله‌ها)، Peak Annotation (پاه‌نش قله‌ها)، منابع داده ENCODE، Roadmap Epigenome</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه چهارم — تحلیل تنظيم ژن و داده‌های expression (۱ جلسه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>تحلیل فاکتورهای رونویسی و نوکlezdor کروماتین، identification شانگرهای ژن و تحلیل</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه پنجم — پروژه العمق (۱ جلسه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>شناسایی و تحلیل عناصری organizing الجينات (CREs) در steroid سه niveau با استفاده از داده‌های H3K27ac ChIP-seq و ATAC-seq</li></ul>
+      
+    </div>
+        <div class="mod-note">بخش‌هایی از این سرفصل در منبع با فونت غیر unicode ذخیره شده‌اند و بازسازی شده‌اند.</div>
+      </div>
+    </section>
+    <section class="module-card" id="m17" style="--accent:#be185d;">
+      <div class="module-head">
+        <div class="module-badge">🧬</div>
+        <div class="module-meta">
+          <div class="module-title">پروتئومیکس</div>
+          <div class="module-sub">معرفی MaxQuant، پردازش داده‌ها در R و تحلیل آماری و مصورسازی</div>
+          <div class="module-line">
+            <span class="chip">استاد: دکتر قنبری</span>
+            <span class="chip duration">۳ جلسه · ۶ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — مبانی پروتئومیکس و آشنایی با MaxQuant</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>معرفی فناوری پروتئومیکس و متاپروتئومیکس و کاربردها</li><li>معرفی نرم‌افزار MaxQuant و پارامترهای تنظيمی</li><li>اجرای Label-Free روی داده‌ها</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — پردازش و تحلیل داده‌های پروتئومیکس در R</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>بررسی و تفسیر خروجی‌های MaxQuant</li><li>معرفی کتابخانه‌های مهم نرم‌افزار R در متاپروتئومیکس و پروتئومیکس</li><li>آشنایی با کتابخانه DEP و توابع آن</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه سوم — تحلیل آماری و مصورسازی داده‌های پروتئومیکس (۲ ساعت)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>متا-تحلیل آماری داده‌های DEP پروتئومیکس</li><li>بررسی تغییرات پروتئومیکی در دو گروه سالم و بیمار با داده واقعی</li><li>رسم نمودارهای مقایسه و تحلیلی نظیر Heatmap و نمودارهای مرتبط</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m18" style="--accent:#047857;">
+      <div class="module-head">
+        <div class="module-badge">🧪</div>
+        <div class="module-meta">
+          <div class="module-title">متابولومیکس</div>
+          <div class="module-sub">از تاریخچه تا تحلیل آماری، شناسایی متابولیت‌ها و یکپارچه‌سازی داده‌ها</div>
+          <div class="module-line">
+            <span class="chip">استاد: دکتر مرعشی (بخشفهوم) و مهندس کاووسی (جلسات ۱ تا ۷)</span>
+            <span class="chip duration">۷ جلسه + پروژه عملی · ۱۴ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">بخش مفهوم — متابولومیکس چیست؟ با دکتر مرعشی</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>تاریخچه متابولومیکس از ابتدا تا قرن بیستم</li><li>متابولومیکس از طریق طيف سنجی جرمی (Mass Spectrometry): جداسازی و ...</li><li>متابولومیکس از طریق NMR (Nuclear Magnetic Resonance)</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — مبانی متابولومیکس و اصول دستگاهی</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>آشنایی با متابولومیکس و جایگاه آن در زیست‌شناسی سامانه‌ای</li><li>اصول شیمیایی و دستگاهی مورد نیاز برای تحلیل داده‌ها</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — طراحی مطالعه و ساختار داده‌ها</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>طراحی مطالعه و کنترل کیفیت</li><li>داده‌های خام، قالب‌ها و منابع داده عمومی</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه سوم — پردازش داده‌های متابولومیکس</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>پردازش داده‌های خام و ساخت جدول ویژگی‌ها (Feature Table)</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه چهارم — پاک‌سازی و آماده‌سازی داده‌ها</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>پاک‌سازی داده‌ها، کنترل کیفیت، داده‌های گمشده و نرمال‌سازی</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه پنجم — تحلیل آماری و شناسایی متابولیت‌ها</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>مفاهیم آمار تک متغیره و چندمتغیره</li><li>شناسایی و حاشیه‌نویسی متابولیت‌ها</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه ششم — تفسیر زیستی و یکپارچه‌سازی داده‌ها</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>تفسیر زیستی و تحلیل مسیرها</li><li>یکپارچه‌سازی تحلیل سایر با متابولومیکس (میکس‌های تحلیل)</li><li>معرفی پایگاه‌های داده تخصصی متابولومیکس</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه هفتم — پروژه عملی متابولومیکس</span>
+        <span class="session-duration"></span>
+      </div>
+      
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m19" style="--accent:#4338ca;">
+      <div class="module-head">
+        <div class="module-badge">🧠</div>
+        <div class="module-meta">
+          <div class="module-title">یادگیری ماشین</div>
+          <div class="module-sub">از مبانی تا شبکه‌های عصبی و پروژه نهایی</div>
+          <div class="module-line">
+            <span class="chip">استاد: دکتر نوروزی</span>
+            <span class="chip duration">۶ جلسه + پروژه نهایی · ۱۲ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — مبانی یادگیری ماشین و آشنایی با ابزارها</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>تعریف یادگیری ماشین و کاربردها در مسائل واقعی</li><li>تفاوت برنامه‌نویسی سنتی و یادگیری ماشین</li><li>انواع یادگیری ماشین: Supervised Learning، Unsupervised Learning، Reinforcement Learning</li><li>مفاهیم: Target/Label و Dataset، Sample، Feature</li><li>مراحل اصلی اجرای یک پروژه یادگیری ماشین</li><li>معرفی محیط Jupyter Notebook و کتابخانه‌ها (Scikit-learn، NumPy، Pandas، Matplotlib)</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — آماده‌سازی و پیش‌پردازش داده‌ها</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>بارگذاری و بررسی اولیه Dataset، کار با Pandas و NumPy</li><li>شناسایی Target و Features، شناسایی و مدیریت داده‌های گمشده</li><li>مدیریت داده‌های دسته‌ای و تبدیل داده‌های غیرعددی</li><li>استانداردسازی و نرمال‌سازی داده‌ها، تقسیم داده‌ها به Training و Test</li><li>مفهوم Data Leakage، اجرا عملی پیش‌پردازش داده‌ها با Python</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه سوم — یادگیری نظارت شده: طبقه‌بندی و رگرسیون</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>رگرسیون: Linear Regression، آموزش مدل و پیش‌بینی مقادیر جدید</li><li>طبقه‌بندی: Logistic Regression، Decision Tree، SVM، Random Forest</li><li>اجرا عملی الگوریتم‌ها و تفسیر خروجی‌ها</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه چهارم — ارزیابی مدل‌های یادگیری ماشین</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>مفهوم Prediction و Error</li><li>ارزیابی مدل‌های طبقه‌بندی: Confusion Matrix، Accuracy، Precision، Recall، F1-score</li><li>مفهوم Training Error و Test Error، Underfitting و Overfitting</li><li>اعتبارسنجی متقابل (Cross-Validation)، مقایسه عملکرد مدل‌ها</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه پنجم — یادگیری بدون نظارت و الگوریتم‌های تکمیلی</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>خوشه‌بندی با K-Means، مفاهیم Centroid و Cluster</li><li>کاهش ابعاد با PCA و نمایش داده‌های چندبعدی</li><li>الگوریتم K-Nearest Neighbors (KNN)</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه ششم — شبکه‌های عصبی و اجرای پروژه نهایی</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>مقدمه‌ای بر شبکه‌های عصبی مصنوعی و کاربردها در یادگیری ماشین</li><li>مروری بر سایر الگوریتم‌های رایج و معیارهای انتخاب مدل مناسب</li><li>اجرا پروژه عملی با یک Dataset واقعی</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m20" style="--accent:#db2777;">
+      <div class="module-head">
+        <div class="module-badge">🧬</div>
+        <div class="module-meta">
+          <div class="module-title">Multi-Omics (میکس-أومیکس)</div>
+          <div class="module-sub">مفهوم Multi-Omics، رویکردهای ادغام و تمرین عملی</div>
+          <div class="module-line">
+            <span class="chip">استاد: خانم فاطمه وفایی</span>
+            <span class="chip duration">۲ جلسه + پروژه · ۴ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — مفهوم و ضرورت ادغام Multi-Omics (۲ ساعت)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>مفهوم Multi-Omics و ضرورت ادغام؛ چالش‌ها: مقياس، ابعاد، داده گمشده، تفاوت پلتفرم</li><li>رویکردها: Early، Intermediate، Late Integration؛ کاهش ابعاد، خوشه‌بندی و بسته‌های نرم‌افزاری</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — تمرین عملی ادغام داده‌ها (۲ ساعت)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>پروژه: ادغام بیان ژن و پروتئومیکس در سرطان</li><li>Apply شناسه‌ها، مصورسازی و تفسیر زیستی</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m21" style="--accent:#0f766e;">
+      <div class="module-head">
+        <div class="module-badge">💉</div>
+        <div class="module-meta">
+          <div class="module-title">طراحی واکسن</div>
+          <div class="module-sub">مبانی واکسنشناسی، Reverse Vaccinology، Multi-Epitope و ارزیابی محاسباتی</div>
+          <div class="module-line">
+            <span class="chip">استاد: دکتر سيف پور</span>
+            <span class="chip duration">۴ روز/جلسه · حدود ۸ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">روز اول — مبانی واکسنشناسی (آموزش تئوری ۹۰ دقیقه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>چرا طراحی واکسن برای بیماری‌های مختلف و اصول واکسنشناسی</li><li>پلتفرم‌های واکسن و رویکردهای درمانی واکسن‌محور نسل جدید</li><li>ایمونولوژی واکسن</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — شناسایی کاندید‌های ژن آنتی و طراحی واکسن (تئوری ۴۰ دقیقه + عملی ۸۰ دقیقه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>طراحی واکسن به روش In Silico، Immunoinformatics و کاربردها</li><li>رویکردهای نوین: Reverse Vaccinology، Structural Vaccinology، Epitope-Based Vaccine Design، Multi-Epitope Vaccine Design</li><li>کاربرد داده‌های Transcriptomics، Genomics، Proteomics در شناسایی کاندید‌های آنتی‌ژن</li><li>معیارهای انتخاب آنتی‌ژن مناسب: اختصاصیت، حفاظت توالی، بیان و ویژگی‌های عملکردی</li><li>عملی: استخراج و جستجو توالی کاندید‌های آنتی‌ژن از NCBI و UniProt، مدیریت توالی پروتئینی در فرمت FASTA</li><li>بررسی isoforms و واریانت‌های توالی و اطلاعات عملکردی؛ بیان آنتی‌ژن‌ها در بافت‌های طبیعی و بیماری با Human Protein Atlas، GTEx و پروژه‌های مرتبط با سرطان</li><li>مقايسه و اولویت‌بندی آنتی‌ژن‌های منتخب</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه سوم — پیش‌بینی و غربالگری اپیتوپ‌های B-cell و T-cell (تئوری ۵۳ دقیقه + عملي ۵۸ دقیقه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>مبانی شناسایی اپیتوپ و نقش MHC Class I و MHC Class II در ارائه آنتی‌ژن</li><li>تفاوت اپیتوپ‌های B-cell، CTL، HTL</li><li>اصول پیش‌بینی اتصال پپتید به MHC: شاخص IC50 و Percentile Rank، تفسیر</li><li>نقش HLA Polymorphism و تنوع genetik جمعیت در انتخاب اپیتوپ‌ها</li><li>عملی: پایگاه IEDB و ابزارهای پیش‌بینی اپیتوپ، پیش‌بینی اپیتوپ‌های MHC Class I و II</li><li>مقایسه MHC Binding و MHC Eluted Ligand Prediction، پیش‌بینی اپیتوپ‌های B-cell، بررسی شواهد گزارش‌شده در IEDB</li><li>غربالگری و رتبه‌بندی اپیتوپ‌ها بر اساس امتیازات محاسباتی و معیارهای ایمنی‌شناختی</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه چهارم — طراحی و ارزیابی محاسباتی کاندید واکسن (تئوری ۳۰ دقیقه + عملي ۹۰ دقیقه)</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>اصول طراحی سازه‌های واکسنی مبتنی بر اپیتوپ (Multi-Epitope Vaccine Constructs) و نقش Adjuvants و Linkers</li><li>معیارهای انتخاب نهایی اپیتوپ‌ها: Conservancy، Population Coverage، Similarity Screening</li><li>اصول ارزیابی In Silico: ویژگی‌های فيزیکوشیمیایی و ساختاری، محدودیت‌ها</li><li>عملی: بررسی保守یت اپیتوپ‌ها با IEDB Epitope Conservancy Analysis، ارزیابی پوشش جمعیتی با IEDB Population Coverage</li><li>بررسی شباهت با پروتئین‌های انسانی با PEPMatch، انتخاب نهایی اپیتوپ‌ها و طراحی توالی یک سازه با Multi-Epitope و Linkerهای مناسب</li><li>ارزیابی ویژگی‌های فيزیکوشیمیایی با ExPASy ProtParam (Molecular Weight، Theoretical pI، Instability Index، Aliphatic Index، GRAVY)</li><li>مشاهده ساختارهای پروتئینی آماده در AlphaFold Protein Structure Database و PDB</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m22" style="--accent:#1e3a5f;">
+      <div class="module-head">
+        <div class="module-badge">📝</div>
+        <div class="module-meta">
+          <div class="module-title">نگارش مقاله</div>
+          <div class="module-sub">سازماندهی یافته‌ها و نگارش بخش‌های مقاله پژوهشی</div>
+          <div class="module-line">
+            <span class="chip">استاد: خانم فرشته نوروزی</span>
+            <span class="chip duration">۲ جلسه · ۴ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — سازماندهی و تفسیر یافته‌ها</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>استخراج یافته‌های اصلی از خروجی Analyses</li><li>انتخاب و اولویت‌بندی نتایج قابل ارائه</li><li>انتخاب نمودارها و جداول مناسب</li><li>تفسیر زیستی و ارتباط با سؤال پژوهش</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — نگارش مقاله پژوهشی</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>ساختار مقاله و سازماندهی بخش‌ها</li><li>نگارش Results و Methods، تدوین Discussion و Introduction</li><li>عنوان‌گذاری، چکیده‌نویسی و انتخاب مجله</li><li>استفاده مسئولانه از ابزارهای هوش مصنوعی</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+    <section class="module-card" id="m23" style="--accent:#f59e0b;">
+      <div class="module-head">
+        <div class="module-badge">💼</div>
+        <div class="module-meta">
+          <div class="module-title">فریلنسری و بازار کار</div>
+          <div class="module-sub">فرصتهای شغلی، نمونه کار، قیمت‌گذاری و تجاری‌سازی ایده</div>
+          <div class="module-line">
+            <span class="chip">استاد: —</span>
+            <span class="chip duration">۲ جلسه · ۴ ساعت</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-body">
+        
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه اول — فرصت‌های شغلی و خدمات قابل ارائه</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>شناسایی مشتریان و کارفرمایان بالقوه</li><li>ساخت نمونه کار و پروفایل حرفه‌ای</li><li>قیمت‌گذاری و جذب پروژه</li></ul>
+      
+    </div>
+    <div class="session">
+      <div class="session-head">
+        <span class="session-title">جلسه دوم — کارآفرینی و تجاری‌سازی</span>
+        <span class="session-duration"></span>
+      </div>
+      <ul class="topics"><li>تبدیل ایده پژوهش به محصول یا خدمت</li><li>شناسایی هدف بازار و مدل کسب و کار</li><li>توسعه ابزارها و محصولات داده‌محور</li><li>تیم‌سازی، جذب سرمایه و ارائه ایده</li></ul>
+      
+    </div>
+        
+      </div>
+    </section>
+</section>
+
+
+
+</div>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a55d1d361ceddc5a',t:'MTc5Mzg5NDg3NA=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a55d1d361ceddc5a',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
